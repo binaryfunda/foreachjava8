@@ -16,58 +16,47 @@ import org.foreachjava8.model.Student;
 public class ForEachLoopExampleJava8 {
 
 	public static void main(String args[]) {
-		
-		
-		
-		
 
-		
 		List<Student> studentList = new ArrayList<>();
 		studentList.add(new Student(1, "RAJESH"));
 		studentList.add(new Student(1, "SHAM"));
 		studentList.add(new Student(1, "ANDY"));
 		studentList.add(new Student(1, "ALI"));
-		
-		
+
 		// @@@ Iteration Consumer Interface example@@@
 		Consumer<Student> printStudent = new Consumer<Student>() {
-		    public void accept(Student student) {
-		        System.out.println(student.getName());
-		    };
+			public void accept(Student student) {
+				System.out.println(student.getName());
+			};
 		};
 		studentList.forEach(printStudent);
 		// --------------------------------------------
-		
-		
-		// @@@ Iteration  Method Reference example@@@
+
+		// @@@ Iteration Method Reference example@@@
 		studentList.forEach(System.out::println);
 		// --------------------------------------------
-		
+
 		// @@@ Iteration over List example@@@
 
 		studentList.forEach(student -> {
 			System.out.println(student.getName());
 		});
 		// --------------------------------------------
-		
 
 		// @@@ Iteration over Set example@@@
-		
+
 		Set<String> uniquesurName = new HashSet<>(Arrays.asList("RAM", "SAM", "CAN", "ABHISHEK"));
 		uniquesurName.forEach(System.out::println);
 		// --------------------------------------------
-		
-		
 
 		// @@@ Iteration over Map example@@@
-		
+
 		Map<Integer, String> studentNamesMap = new HashMap<>();
 		studentNamesMap.put(1, "RAHUL");
 		studentNamesMap.put(2, "AMAN");
 		studentNamesMap.put(3, "REENA");
 		studentNamesMap.forEach((key, value) -> System.out.println(key + " " + value));
 		// --------------------------------------------
-		
 
 		// @@@ Iteration over Map example@@@
 		Queue<String> namesQueue = new ArrayDeque<>(Arrays.asList("RAM", "SAM", "ABHISHEK"));
